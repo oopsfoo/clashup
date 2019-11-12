@@ -1,9 +1,9 @@
 #!/bin/bash
-httpport=$(grep '^[[:blank:]]*port' ../conf/config.yaml\
+httpport=$(grep '^[[:blank:]]*port' ../conf/config.yml\
 	|grep -v '#[[:blank:]]*port'\
 	|tail -n1\
 	|awk '{print $2}')
-sockport=$(grep socks-port ../conf/config.yaml|grep -v '#[[:blank:]]*socks'|tail -n1|awk '{print $2}')
+sockport=$(grep socks-port ../conf/config.yml|grep -v '#[[:blank:]]*socks'|tail -n1|awk '{print $2}')
 echo $httpport
 echo $sockport
 gsettings set org.gnome.system.proxy.http host '127.0.0.1'
